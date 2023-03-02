@@ -8,7 +8,11 @@ const Navbar = () => {
         <img src={textLogo} alt="" />
       </div>
       <ul className="nav-menu">
+        <input type="text" />
       </ul>
+      <div className="nav-profile">
+        
+      </div>
     </nav>
   );
 };
