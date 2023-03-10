@@ -48,6 +48,18 @@ class StatusTest extends TestCase
         $response->assertStatus(201)
             ->assertJsonPath('data.sentences', $status->sentences);
     }
+    public function test_user_can_not_add_status_sentences_limit_50_words()
+    {
+        $status = Status::factory()->create([
+            'sentences' => 'a a a a a a a a a a a a a a a a a a a a'
+        ]);
+
+        $response = $this->actingAs($this->user)->postJson('api/status', $status->toArray());
+
+        // dd($status);
+
+        $response->assertStatus(422);
+    }
 
     public function test_user_can_see_one_status()
     {

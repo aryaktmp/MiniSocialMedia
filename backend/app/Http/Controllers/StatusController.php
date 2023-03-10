@@ -20,6 +20,7 @@ class StatusController extends Controller
     {
         $data = Status::selectRaw("statuses.id, statuses.sentences, statuses.created_at, statuses.user_id")
             ->WithCountData()
+            ->WithLoveStatus()
             ->with('User')
             ->orderBy('statuses.created_at', 'DESC');
         // dd($data->paginate(10));
@@ -30,6 +31,7 @@ class StatusController extends Controller
     {
         $data = Status::selectRaw("statuses.id, statuses.sentences, statuses.created_at, statuses.user_id")
             ->WithCountData()
+            ->WithLoveStatus()
             ->with('User')
             ->orderBy('statuses.created_at', 'DESC')
             ->where('statuses.user_id', $id);
@@ -59,7 +61,15 @@ class StatusController extends Controller
             'sentences' => 'required',
         ]);
 
+        $validationSentences = explode(' ', $request->sentences);
+        if ((count($validationSentences) > 10) == true) {
+            return response()->json([
+                'sentences' => 'Your status exceeds the given limit which is 50 words'
+            ], 422);
+        }
+
         if ($validate->fails()) {
+            // dd(response()->json($validate->errors(), 422));
             return response()->json($validate->errors(), 422);
         }
 
@@ -90,6 +100,7 @@ class StatusController extends Controller
     {
         $data = Status::selectRaw("statuses.id, statuses.sentences, statuses.created_at, statuses.user_id")
             ->WithCountData()
+            ->WithLoveStatus()
             ->with('User')
             ->with("Comments")
             ->where('statuses.id', $id)
@@ -148,9 +159,8 @@ class StatusController extends Controller
             $love->save();
         }
         return response()->json([
-            'small_loves' => Love::selectRaw('love_statuses.user_id,name')->WithProfile()->where('status_id', $id)->limit(3)->get(),
             'total_love' => Love::where('status_id', $id)->count(),
-            'love_status' => $loveStatus ? false : true,
+            'love_status' => $loveStatus ? 0 : 1,
         ]);
     }
 
@@ -170,6 +180,7 @@ class StatusController extends Controller
             //throw $th;
             return response()->json(['error' => $th->getMessage()], 500);
         }
+        // dd(response()->noContent());
         return response()->noContent();
     }
 }

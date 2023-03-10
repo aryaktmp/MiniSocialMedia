@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./../../assets/css/login.css";
+import "./../../assets/css/auth/login.css";
 import LogoRekin from "./../../assets/images/logo-rekin2.png";
 import { Input } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import LoadingPages from "../../components/loadingPage";
 
-const Login = () => { 
+const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +27,7 @@ const Login = () => {
       .then((response) => {
         localStorage.setItem("token", response.data.token);
         // localStorage.setItem("auth", JSON.stringify(response.data.user));
-        navigate("/");
+        navigate("/rekin/home/all");
         isLoadings(false);
       })
       .catch((error) => {
@@ -39,18 +39,20 @@ const Login = () => {
   useEffect(() => {
     document.title = "Login - Rekin";
     if (localStorage.getItem("token") !== null) {
-      navigate("/");
+      navigate("/rekin/home/all");
     }
   }, []);
 
   return (
     <>
-      {loadings == true ? <LoadingPages /> : ""}
+      {loadings === true ? <LoadingPages /> : ""}
       <div className="wrapper-login">
         <div className="card-login">
           <div className="header-card">
             <div className="image">
-              <img src={LogoRekin} alt="" />
+              <NavLink to="/rekin/all">
+                <img src={LogoRekin} alt="" />
+              </NavLink>
             </div>
             <div className="header-text">
               <h1>LogIn</h1>

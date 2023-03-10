@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./../../assets/css/register.css";
+import "./../../assets/css/auth/register.css";
 import LogoRekin from "./../../assets/images/logo-rekin2.png";
 import { Input } from "antd";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -44,15 +44,20 @@ const Register = () => {
 
   useEffect(() => {
     document.title = "Register - Rekin";
+    if (localStorage.getItem("token") !== null) {
+      navigate("/rekin/home/all");
+    }
   });
   return (
     <>
-      {loadings == true ? <LoadingPages /> : ""}
+      {loadings === true ? <LoadingPages /> : ""}
       <div className="wrapper-register">
         <div className="card-register">
           <div className="header-card">
             <div className="image">
-              <img src={LogoRekin} alt="" />
+              <NavLink to="/rekin/all">
+                <img src={LogoRekin} alt="" />
+              </NavLink>
             </div>
             <div className="header-text">
               <h1>Register</h1>

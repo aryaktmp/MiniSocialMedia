@@ -1,0 +1,232 @@
+.main-header {
+    background-color: #f8f7ff;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    padding: 20px 0;
+}
+
+.main-header .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header .header img {
+    width: 5rem;
+}
+
+.main-header .nav-tabs {
+    width: 100%;
+    margin: 20px 0 0 0;
+    text-align: center;
+}
+
+.main-header .nav-tabs ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-family: var(--font8);
+    color: #252525;
+}
+
+.main-header .nav-tabs ul li {
+    cursor: pointer;
+}
+
+.main-header .nav-tabs ul li a{
+    text-decoration: none;
+    color: #252525;
+    /* color: #979dac8b; */
+}
+
+.main-header .nav-tabs ul li .active {
+    border-bottom: 2px solid #0466c8;
+    color: #0466c8;
+}
+
+.main-header .nav-tabs ul li a:hover {
+    color: #0466c8;
+    border-bottom: 2px solid #0466c8;
+}
+.main-header .nav-tabs ul li span:hover {
+    color: #0466c8;
+    border-bottom: 2px solid #0466c8;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-content .form-add-status {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 10px;
+    background-color: #f8f7ff;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    padding: 20px 15px;
+}
+
+.main-content .form-add-status img {
+    width: 2rem;
+}
+
+.main-content .form-add-status form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-content .form-add-status form .input-status {
+    font-family: var(--font11);
+    font-size: 17px;
+}
+
+.main-content .form-add-status form .btn-post {
+    padding: 4px 17px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-family: var(--font1);
+    font-size: 20px;
+    color: #efefefef;
+    background-color: #03045e;
+    cursor: pointer;
+}
+
+.main-content .list-content {
+    padding: 20px;
+    background-color: #f8f7ff;
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+}
+
+.main-content .list-content .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-content .list-content .header .user-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-content .list-content .header .user-info .avatar img{
+    width: 2rem;
+}
+
+.main-content .list-content .header .user-info .username{
+    font-family: var(--font13);
+    color: #252525;
+    font-size: 15px;
+}
+
+.main-content .list-content .header .user-info .email{
+    font-size: 12px;
+    font-family: var(--font6);
+    color: #5c677d;
+}
+.main-content .list-content .header .user-info .time{
+    font-size: 12px;
+    font-family: var(--font6);
+    color: #5c677d;
+}
+
+.main-content .list-content .header .option .dropdown-option {
+    cursor: pointer;
+}
+
+.main-content .list-content hr{
+    width: 100%;
+    margin: 5px 0;
+    height: 1px;
+    border-radius: 20px;
+    background-color: #7d8597;
+}
+
+.main-content .list-content .body{
+    text-decoration: none;
+}
+
+.main-content .list-content .body-list{
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+}
+
+.main-content .list-content .body-list span{
+    color: #252525;
+    font-family: var(--font7);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.main-content .list-content .footer-list{
+    padding: 10px 0 0 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-content .list-content .footer-list a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+    font-family: var(--font1);
+}
+
+.main-content .list-content .footer-list a i{
+    color: #252525;
+}
+
+.main-content .list-content .footer-list a i.active-love{
+    color: #c1121f;
+}
+
+.main-content .list-content .footer-list a span{
+    color: #252525;
+}
+
+.main-content .list-content .footer-list a:hover span{
+    color: #0466c8;
+}
+.main-content .list-content .footer-list a:hover i{
+    color: #0466c8;
+}
+.main-content .list-content .footer-list .love a:hover i{
+    color: #c1121f;
+}
+.main-content .list-content .footer-list .love a:hover span{
+    color: #c1121f;
+}
+
+.main-content .list-content .nodata{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.main-content .list-content .nodata img{
+    width: 4rem;
+}
+
+.main-content .list-content .nodata span{
+    font-family: var(--font1);
+    color: #252525;
+    font-size: 20px;
+}

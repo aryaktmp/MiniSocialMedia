@@ -86,7 +86,7 @@ class CommentsController extends Controller
         }
         return response()->json([
             'total_love' => Love::where('comment_status_id', $id)->count(),
-            'love_status' => $loveStatus ? false : true,
+            'love_status' => $loveStatus ? 0 : 1,
         ]);
     }
 
@@ -108,15 +108,29 @@ class CommentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function deleteComments($id)
+    public function deleteComments(Request $request, $id)
     {
-        $comment = Comments::find($id);
-        try {
+        if ($request->mode === "comment") {
 
-            $comment->delete();
-        } catch (\Throwable $th) {
-            //throw $th;
-            return response()->json(['error' => $th->getMessage()], 500);
+            $comment = Comments::find($id);
+            $sub_comment = Comments::where("comment_status_id", $id);
+            try {
+
+                $comment->delete();
+                $sub_comment->delete();
+            } catch (\Throwable $th) {
+                //throw $th;
+                return response()->json(['error' => $th->getMessage()], 500);
+            }
+        } else {
+            $sub_comment = Comments::where("comment_status_id", $id);
+            try {
+
+                $sub_comment->delete();
+            } catch (\Throwable $th) {
+                //throw $th;
+                return response()->json(['error' => $th->getMessage()], 500);
+            }
         }
         return response()->noContent();
     }

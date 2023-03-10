@@ -1,0 +1,650 @@
+.main-header-detail {
+  background-color: #f8f7ff;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-header-detail a {
+  text-decoration: none;
+  color: #252525;
+  font-size: 20px;
+}
+
+.main-header-detail span {
+  font-size: 20px;
+  font-family: var(--font1);
+  color: #252525;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content .detail-status {
+  background-color: #f8f7ff;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.main-content .detail-status .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-content .detail-status .header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content .detail-status .header .user-info .avatar img {
+  width: 2rem;
+}
+
+.main-content .detail-status .header .user-info .username {
+  font-family: var(--font13);
+  color: #252525;
+  font-size: 15px;
+}
+
+.main-content .detail-status .header .user-info .email {
+  font-size: 12px;
+  font-family: var(--font6);
+  color: #5c677d;
+}
+
+.main-content .detail-status .header .option .dropdown-option {
+  cursor: pointer;
+}
+
+.main-content .detail-status hr {
+  width: 100%;
+  margin: 5px 0;
+  height: 1px;
+  border-radius: 20px;
+  background-color: #7d8597;
+}
+
+.main-content .detail-status .body-list {
+  padding: 10px 0;
+  width: 100%;
+  text-decoration: none;
+}
+
+.main-content .detail-status .body-list span {
+  color: #252525;
+  font-family: var(--font7);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.main-content .detail-status .ket-body {
+  color: #5c677d;
+  font-family: var(--font7);
+  opacity: 0.7;
+}
+
+.main-content .detail-status .footer-detail {
+  padding: 10px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-content .detail-status .footer-detail a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  font-family: var(--font1);
+}
+
+.main-content .detail-status .footer-detail a i {
+  color: #252525;
+}
+
+.main-content .detail-status .footer-detail a i.active-love {
+  color: #c1121f;
+}
+
+.main-content .detail-status .footer-detail a span {
+  color: #252525;
+}
+
+.main-content .detail-status .footer-detail a:hover span {
+  color: #0466c8;
+}
+
+.main-content .detail-status .footer-detail a:hover i {
+  color: #0466c8;
+}
+
+.main-content .detail-status .footer-detail .love a:hover i {
+  color: #c1121f;
+}
+
+.main-content .detail-status .footer-detail .love a:hover span {
+  color: #c1121f;
+}
+
+.main-content .wrapper-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-content .wrapper-comments .form-add-comments {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #f8f7ff;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  padding: 20px 15px;
+}
+
+.main-content .wrapper-comments .form-add-comments img {
+  width: 2rem;
+}
+
+.main-content .wrapper-comments .form-add-comments .input-status {
+  font-family: var(--font11);
+  font-size: 14px;
+}
+
+.main-content .wrapper-comments .form-add-comments .btn-post {
+  padding: 4px 17px;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+  font-family: var(--font1);
+  font-size: 20px;
+  color: #efefefef;
+  background-color: #03045e;
+  cursor: pointer;
+}
+
+.main-content .wrapper-comments .title-comments {
+  margin: 10px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content .wrapper-comments .title-comments i {
+  background-color: #0466c8;
+  color: #edf2fb;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.main-content .wrapper-comments .title-comments span {
+  font-size: 20px;
+  font-family: var(--font1);
+  color: #252525;
+}
+
+.main-content .wrapper-comments .list-comments {
+  gap: 10px;
+  background-color: #f8f7ff;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.main-content .wrapper-comments .list-comments hr {
+  width: 100%;
+  margin: 5px 0;
+  height: 1px;
+  border-radius: 20px;
+  background-color: #7d8597;
+}
+
+.main-content .wrapper-comments .list-comments .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-content .wrapper-comments .list-comments .header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content .wrapper-comments .list-comments .header .user-info .avatar img {
+  width: 2rem;
+}
+
+.main-content .wrapper-comments .list-comments .header .user-info .user {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.main-content .wrapper-comments .list-comments .header .user-info .user .info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-content
+  .wrapper-comments
+  .list-comments
+  .header
+  .user-info
+  .user
+  .info
+  .username {
+  font-family: var(--font13);
+  color: #252525;
+  font-size: 15px;
+}
+
+.main-content
+  .wrapper-comments
+  .list-comments
+  .header
+  .user-info
+  .user
+  .info
+  .email {
+  font-size: 12px;
+  font-family: var(--font6);
+  color: #5c677d;
+}
+
+.main-content
+  .wrapper-comments
+  .list-comments
+  .header
+  .user-info
+  .user
+  .replying-to {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content
+  .wrapper-comments
+  .list-comments
+  .header
+  .user-info
+  .user
+  .replying-to
+  span {
+  font-size: 14px;
+  color: #252525;
+  font-family: var(--font11);
+}
+
+.main-content
+  .wrapper-comments
+  .list-comments
+  .header
+  .user-info
+  .user
+  .replying-to
+  span
+  b {
+  font-size: 15px;
+  color: #03045e;
+}
+
+.main-content .wrapper-comments .list-comments .header .option{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content .wrapper-comments .list-comments .header .option a{
+  text-decoration: none;
+  color: #252525;
+  cursor: pointer;
+}
+
+.main-content .wrapper-comments .list-comments .header .option .time {
+  font-size: 12px;
+  font-family: var(--font7);
+  color: #5c677d;
+}
+
+.main-content .wrapper-comments .list-comments .body-list {
+  padding: 10px 0;
+  width: 100%;
+  text-decoration: none;
+}
+
+.main-content .wrapper-comments .list-comments .body-list span {
+  color: #252525;
+  font-family: var(--font7);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.main-content .list-comments .footer-comment {
+  padding: 10px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-content .list-comments .footer-comment a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  font-family: var(--font1);
+}
+
+.main-content .list-comments .footer-comment a i {
+  color: #252525;
+}
+
+.main-content .list-comments .footer-comment a i.active-love {
+  color: #c1121f;
+}
+
+.main-content .list-comments .footer-comment a span {
+  color: #252525;
+}
+
+.main-content .list-comments .footer-comment a:hover span {
+  color: #0466c8;
+}
+
+.main-content .list-comments .footer-comment a:hover i {
+  color: #0466c8;
+}
+
+.main-content .list-comments .footer-comment .love a:hover i {
+  color: #c1121f;
+}
+
+.main-content .list-comments .footer-comment .love a:hover span {
+  color: #c1121f;
+}
+
+.main-content .list-comments .panel-subcomment {
+  margin: 20px 0 0 0;
+}
+
+.main-content .list-comments .nodata{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.main-content .list-comments .nodata img{
+    width: 4rem;
+}
+
+.main-content .list-comments .nodata span{
+    font-family: var(--font1);
+    color: #252525;
+    font-size: 20px;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub {
+  background-color: #f8f7ff;
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.02);
+  -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.02);
+  -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.02);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0 0 10px 0;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .header .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .avatar
+  img {
+  width: 2rem;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .user {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .user
+  .info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .user
+  .info
+  .username {
+  font-family: var(--font13);
+  color: #252525;
+  font-size: 15px;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .user
+  .info
+  .email {
+  font-size: 12px;
+  font-family: var(--font6);
+  color: #5c677d;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .user
+  .replying-to {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .user
+  .replying-to
+  span {
+  font-size: 14px;
+  color: #252525;
+  font-family: var(--font11);
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .header
+  .user-profile
+  .user
+  .replying-to
+  span
+  b {
+  font-size: 15px;
+  color: #03045e;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub hr {
+  width: 100%;
+  margin: 5px 0;
+  height: 1px;
+  border-radius: 20px;
+  background-color: #7d8597;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .header .option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .header .option a{
+  text-decoration: none;
+  color: #252525;
+  cursor: pointer;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .header .option .time {
+  font-size: 12px;
+  font-family: var(--font7);
+  color: #5c677d;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .body-list-sub {
+  padding: 10px 0;
+  width: 100%;
+  text-decoration: none;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .body-list-sub span {
+  color: #252525;
+  font-family: var(--font7);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .footer-list-sub {
+  padding: 10px 0 0 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .footer-list-sub a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8px;
+  font-family: var(--font1);
+}
+
+.main-content .list-comments .panel-subcomment .list-sub .footer-list-sub a i {
+  color: #252525;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .footer-list-sub
+  a
+  i.active-love {
+  color: #c1121f;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .footer-list-sub
+  a
+  span {
+  color: #252525;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .footer-list-sub
+  a:hover
+  span {
+  color: #0466c8;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .footer-list-sub
+  a:hover
+  i {
+  color: #0466c8;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .footer-list-sub
+  .love
+  a:hover
+  i {
+  color: #c1121f;
+}
+
+.main-content
+  .list-comments
+  .panel-subcomment
+  .list-sub
+  .footer-list-sub
+  .love
+  a:hover
+  span {
+  color: #c1121f;
+}

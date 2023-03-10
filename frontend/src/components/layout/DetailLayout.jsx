@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { notification } from "antd";
 import axios from "axios";
 import Navbar from "../navbar/Navbar";
 import SidebarLeft from "../sidebar/SidebarAuth";
 import "./../../assets/css/layout/Layout.css";
 
-const AuthLayout = ({ children }) => {
+const DetailLayout = ({ children }) => {
   const navigate = useNavigate();
   const [isExpired, setIsExpired] = useState(false);
 
@@ -29,6 +30,17 @@ const AuthLayout = ({ children }) => {
       localStorage.removeItem("token");
       localStorage.removeItem("auth");
       navigate("/rekin/all");
+      notification.open({
+        icon: (
+          <i
+            style={{ color: "#ff6b35" }}
+            className="fa-solid fa-circle-exclamation"
+          ></i>
+        ),
+        message: "You Must Be Login!",
+        description: "Must login before doing activity",
+        duration: 2,
+      });
     }
   }, [fetchUser()]);
 
@@ -50,4 +62,4 @@ const AuthLayout = ({ children }) => {
   );
 };
 
-export default AuthLayout;
+export default DetailLayout;

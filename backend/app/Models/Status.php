@@ -26,12 +26,23 @@ class Status extends Model
             ->leftJoin(DB::raw('(select count(id) as total_view, status_id from detail_view_statuses group by status_id) view'), 'view.status_id', '=', 'statuses.id');
     }
 
+    public function scopeWithLoveStatus($query)
+    {
+        return $query->selectRaw("
+            CASE
+                WHEN love_statuses.love_status THEN 1
+            ELSE 0
+            END as love_status
+        ")->leftJoin(DB::raw("(select status_id, TRUE love_status from love_statuses WHERE user_id='" . auth()->id() . "') love_statuses"), 'statuses.id', '=', 'love_statuses.status_id');
+    }
+
     public function Comments()
     {
         return $this->hasMany(Comments::class, 'status_id', 'id')
             ->selectRaw('comments.id,status_id,comment,comments.created_at,user_id')
             ->where('comments.comment_status_id', 0)
             ->WithCountData()
+            ->WithLoveStatus()
             ->with('User')
             ->with('subComments')
             ->leftJoin('users', 'users.id', 'comments.user_id')

@@ -29,12 +29,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware(['auth:api'])->group(
     function () {
         // status
-        Route::get('/status/{id}', [StatusController::class, 'show']);
-        Route::get('/status/posted/{id}', [StatusController::class, 'postedStatusUser']);
         Route::post('/status', [StatusController::class, 'store']);
         Route::post('/status/{id}/edit', [StatusController::class, 'update']);
         Route::post('/status/{id}/love', [StatusController::class, 'love']);
         Route::delete('/status/{id}', [StatusController::class, 'deleteStatus']);
+        Route::get('/status/posted/{id}', [StatusController::class, 'postedStatusUser']);
 
         // comments
         Route::post('/comments/{id}', [CommentsController::class, 'save']);

@@ -1,0 +1,120 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 120px;
+    width: 100%;
+    background-color: #a9d6e5;
+    box-shadow: 0px 5px 12px 0px rgba(97, 97, 97, 0.19);
+    -webkit-box-shadow: 0px 5px 12px 0px rgba(97, 97, 97, 0.19);
+    -moz-box-shadow: 0px 5px 12px 0px rgba(97, 97, 97, 0.19);
+}
+
+.nav .nav-brand {
+    width: 10rem;
+    text-align: left;
+}
+
+.nav .nav-brand img {
+    width: 5rem;
+}
+
+.nav .nav-menu {
+    text-align: center;
+}
+
+.nav .nav-menu input {
+    width: 18rem;
+    height: 2rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    padding: 5px 10px;
+    font-family: var(--font2);
+    border: 2px solid #efefef;
+    background-color: #efefef;
+    transition: 0.2s;
+}
+
+.nav .nav-menu input:focus {
+    transform: scale(1.05);
+    box-shadow: 0px 2px 13px -2px rgba(97, 97, 97, 0.1);
+    -webkit-box-shadow: 0px 2px 13px -2px rgba(97, 97, 97, 0.1);
+    -moz-box-shadow: 0px 2px 13px -2px rgba(97, 97, 97, 0.1);
+    transition: 0.2s;
+}
+
+.nav .nav-menu input::placeholder{
+    transition: 0.2s;
+    
+}
+
+.nav .nav-menu input:focus::placeholder{
+    padding: 0 0 0 10px ;
+    transition: 0.2s;
+    opacity: 0.6;
+}
+
+.nav .nav-auth {
+    width: 10rem;
+    text-align: right;
+}
+
+.nav .nav-auth .profile {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.nav .nav-auth .profile .dropdown{
+    font-size: 50px !important;
+    font-family: var(--font6) !important;
+}
+
+.nav .nav-auth .profile img {
+    width: 2rem;
+    cursor: pointer;
+}
+
+.nav .nav-auth .auth {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+
+.nav .nav-auth .auth a {
+    color: #000814;
+    width: 5rem;
+    padding: 5px 0;
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--font4);
+    border-radius: 5px;
+}
+
+.nav .nav-auth .auth a.register {
+    background-color: #003566;
+    color: #edf2fb;
+    transition: 0.2s;
+    border: 2px solid #003566;
+}
+
+.nav .nav-auth .auth a.register:hover {
+    color: #000814;
+    background-color: transparent;
+    border: 2px solid #003566;
+}
+
+.nav .nav-auth .auth a.login {
+    border: 2px solid #003566;
+    transition: 0.2s;
+}
+
+.nav .nav-auth .auth a.login:hover {
+    background-color: #003566;
+    color: #edf2fb;
+    border: 2px solid #003566;
+}
