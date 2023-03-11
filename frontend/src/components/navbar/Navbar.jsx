@@ -1,55 +1,82 @@
 import React, { useEffect, useState } from "react";
 import textLogo from "./../../assets/images/text-logo-rekin.png";
 import "../../assets/css/components/navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { notification } from "antd";
 import { Dropdown } from "antd";
-
-const user = JSON.parse(localStorage.getItem("auth"));
-
-const items = [
-  {
-    key: "0",
-    label: (
-      <span className="drop-menu">
-        Welcome, {user == null ? "" : user.name}
-      </span>
-    ),
-  },
-  {
-    type: "divider",
-  },
-  {
-    key: "1",
-    label: (
-      <NavLink
-        className="drop-menu"
-        target="_blank"
-        rel="noopener noreferrer"
-        to="/rekin/home"
-      >
-        Profile
-      </NavLink>
-    ),
-  },
-  {
-    type: "divider",
-  },
-  {
-    key: "2",
-    danger: true,
-    label: (
-      <NavLink className="drop-menu">
-        <i className="fa-solid fa-right-from-bracket"></i> Logout
-      </NavLink>
-    ),
-  },
-];
+import axios from "axios";
 
 const Navbar = () => {
-  let [token, setToken] = useState(null);
+  const user = JSON.parse(localStorage.getItem("auth"));
+  const token = localStorage.getItem("token");
   let [auth, setAuth] = useState(null);
+  const navigate = useNavigate();
+
+  const logoutHandler = async (e) => {
+    e.preventDefault();
+    // axios.defaults.headers.common = `Bearer ${token}`;
+
+    await axios
+      .post("http://localhost:8000/api/logout")
+      .then((res) => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("auth");
+        navigate("/rekin/all");
+        notification.open({
+          icon: (
+            <i
+              style={{ color: "#20bf55" }}
+              className="fa-solid fa-circle-check"
+            ></i>
+          ),
+          message: "You Succes to logout!!",
+          duration: 2,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const items = [
+    {
+      key: "0",
+      label: (
+        <span className="drop-menu">
+          Welcome, {user == null ? "" : user.name}
+        </span>
+      ),
+    },
+    {
+      type: "divider",
+    },
+    {
+      key: "1",
+      label: (
+        <NavLink
+          className="drop-menu"
+          target="_blank"
+          rel="noopener noreferrer"
+          to="/rekin/home"
+        >
+          Profile
+        </NavLink>
+      ),
+    },
+    {
+      type: "divider",
+    },
+    {
+      key: "2",
+      danger: true,
+      label: (
+        <NavLink className="drop-menu" onClick={logoutHandler}>
+          <i className="fa-solid fa-right-from-bracket"></i> Logout
+        </NavLink>
+      ),
+    },
+  ];
   useEffect(() => {
-    setToken(localStorage.getItem("token"));
     setAuth(JSON.parse(localStorage.getItem("auth")));
   }, []);
   return (
