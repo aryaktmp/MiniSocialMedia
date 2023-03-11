@@ -22,7 +22,6 @@ export default {
       return;
     }
     try {
-      // console.log(page);
       let url;
       if (page != null && page > 1) {
         url = `http://localhost:8000/api/status/posted/${auth.id}?page=${page}`;
@@ -30,7 +29,6 @@ export default {
         url = `http://localhost:8000/api/status/posted/${auth.id}`;
       }
       const response = await axios.get(url);
-      // console.log(response.data.data)
       return response.data.data;
     } catch (error) {
       throw error;
@@ -40,7 +38,6 @@ export default {
     try {
       let url = `http://localhost:8000/api/status/${id}`;
       const response = await axios.get(url);
-      // console.log(new Date(response.data.created_at));
       return response.data;
     } catch (error) {
       throw error;
@@ -52,7 +49,6 @@ export async function LoveStatus(id) {
   try {
     let url = `http://localhost:8000/api/status/${id}/love`;
     const response = await axios.post(url);
-    // console.log(response)
     return response;
   } catch (error) {
     throw error;
@@ -83,7 +79,6 @@ export async function DeleteStatus(id) {
   let url = `http://localhost:8000/api/status/${id}`;
   try {
     const response = await axios.delete(url)
-    // console.log(response)
     return response;
   } catch (error) {
     throw error

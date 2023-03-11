@@ -36,7 +36,10 @@ export function ListSubComments({
           .then((response) => {
             if (response.data === "") {
               for (let i = 0; i < comment.sub_comments.length; i++) {
-                if (comment.sub_comments[i].comment_status_id === sub.comment_status_id) {
+                if (
+                  comment.sub_comments[i].comment_status_id ===
+                  sub.comment_status_id
+                ) {
                   comment.sub_comments.splice(i, 1);
                 }
               }

@@ -94,6 +94,7 @@ const AllStatus = () => {
       })
       .catch((e) => {
         console.log(e);
+        setIsLoadingList(false);
         setValidationWords(true);
         notification.open({
           icon: (
@@ -116,14 +117,6 @@ const AllStatus = () => {
     setIsLoadingPages(true);
     loadAllStatus(page);
   }, []);
-
-  window.onload = () => {
-    setToken(localStorage.getItem("token"));
-    setAuth(JSON.parse(localStorage.getItem("auth")));
-    setIsLoadingPages(true);
-    setIsLoadingComponents(true);
-    loadAllStatus(page);
-  };
 
   useEffect(() => {
     loadAllStatus(page);

@@ -17,17 +17,10 @@ import moment from "moment";
 import { PostComment } from "../services/CommentService";
 import { UpdateStatus } from "../services/StatusService";
 import { DeleteStatus } from "../services/StatusService";
-import StatusService from "../services/StatusService";
 
 const { TextArea } = Input;
 
-const PanelStatus = ({
-  data,
-  keyy,
-  updateForce,
-  tokenn,
-  allData,
-}) => {
+const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
   const navigate = useNavigate();
   let [token, setToken] = useState(null);
   const [rendering, forceUpdate] = useReducer((x) => x + 1, 0);
@@ -164,7 +157,12 @@ const PanelStatus = ({
     {
       label: <Link onClick={showModal}>Edit Status</Link>,
       key: "0",
-      disabled: auth != null && data != null ? (auth.id === data.user_id ? false : true) : true,
+      disabled:
+        auth != null && data != null
+          ? auth.id === data.user_id
+            ? false
+            : true
+          : true,
     },
     {
       type: "divider",
@@ -173,7 +171,12 @@ const PanelStatus = ({
       label: <Link onClick={deleteStatus}>Delete Status</Link>,
       key: "1",
       danger: true,
-      disabled: auth != null ? (auth.id === data.user_id ? false : true) : true,
+      disabled:
+        auth != null && data != null
+          ? auth.id === data.user_id
+            ? false
+            : true
+          : true,
     },
   ];
 
@@ -349,8 +352,7 @@ const PanelStatus = ({
                               className="fa-solid fa-circle-check"
                             ></i>
                           ),
-                          message: "You Must Be Login!",
-                          description: "Must login before doing activity",
+                          message: "Succes to add comment!",
                           duration: 2,
                         });
                         window.scrollTo({

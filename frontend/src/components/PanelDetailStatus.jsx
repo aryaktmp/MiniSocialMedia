@@ -243,7 +243,7 @@ const PanelDetailStatus = ({
         ]}
       >
         <Form form={form} layout="vertical">
-          <Form.Item name="sentences" label="New Status">
+          <Form.Item hasFeedback name="sentences" label="New Status">
             <TextArea
               status={validationWords ? "error" : ""}
               required

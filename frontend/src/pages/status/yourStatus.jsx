@@ -97,6 +97,7 @@ const YourStatus = () => {
       .catch((e) => {
         console.log(e);
         setValidationWords(true);
+        setIsLoadingList(false);
         notification.open({
           icon: (
             <i
@@ -211,14 +212,6 @@ const YourStatus = () => {
         ""
       )}
 
-      {/* {yourPost.map((your, i) => (
-        <PanelStatus
-          data={your}
-          key={i}
-          keyy={i}
-          onClickToggleLove={forceUpdate}
-        />
-      ))} */}
       {!isLoadingList ? (
         yourPost.map((your, i) => (
           <PanelStatus

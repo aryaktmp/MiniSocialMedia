@@ -143,8 +143,7 @@ const ListComments = ({
                             className="fa-solid fa-circle-check"
                           ></i>
                         ),
-                        message: "You Must Be Login!",
-                        description: "Must login before doing activity",
+                        message: "Success to add comment!",
                         duration: 2,
                       });
                       window.scrollTo({

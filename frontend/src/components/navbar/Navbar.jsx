@@ -14,8 +14,6 @@ const Navbar = () => {
 
   const logoutHandler = async (e) => {
     e.preventDefault();
-    // axios.defaults.headers.common = `Bearer ${token}`;
-
     await axios
       .post("http://localhost:8000/api/logout")
       .then((res) => {
