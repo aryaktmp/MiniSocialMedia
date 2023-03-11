@@ -113,6 +113,7 @@ const AllStatus = () => {
   useEffect(() => {
     setToken(localStorage.getItem("token"));
     setAuth(JSON.parse(localStorage.getItem("auth")));
+    setIsLoadingList(true)
     setIsLoadingComponents(true);
     setIsLoadingPages(true);
     loadAllStatus(page);

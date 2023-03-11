@@ -273,9 +273,9 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
           <div className="avatar">
             <img src={require("./../assets/images/user.png")} alt="" />
           </div>
-          <span className="username">{data.user.name}</span>
-          <span className="email">{data.user.email}</span>
-          <span className="time">• &nbsp;{dateStatus(data.created_at)}</span>
+          <span className="username">{data?.user.name}</span>
+          <span className="email">{data?.user.email}</span>
+          <span className="time">• &nbsp;{dateStatus(data?.created_at)}</span>
         </div>
         <div className="option">
           <Dropdown
