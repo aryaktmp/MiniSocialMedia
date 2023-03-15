@@ -113,7 +113,7 @@ const AllStatus = () => {
   useEffect(() => {
     setToken(localStorage.getItem("token"));
     setAuth(JSON.parse(localStorage.getItem("auth")));
-    setIsLoadingList(true)
+    setIsLoadingList(true);
     setIsLoadingComponents(true);
     setIsLoadingPages(true);
     loadAllStatus(page);
@@ -238,7 +238,7 @@ const AllStatus = () => {
         ""
       )}
 
-      {noData ? (
+      {noData && !isLoadingComponents && !isLoadingList ? (
         <div className="list-content">
           <div className="nodata">
             <img src={require("./../../assets/images/inbox.png")} alt="" />

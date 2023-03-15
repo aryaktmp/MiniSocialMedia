@@ -56,7 +56,6 @@ const YourStatus = () => {
 
   const postStatus = async (e) => {
     e.preventDefault();
-    // forceUpdate()
     const formData = new FormData();
     formData.append("sentences", statusMessage);
 
@@ -64,12 +63,13 @@ const YourStatus = () => {
     await PostStatus(formData)
       .then((res) => {
         if (res.success === true) {
+          const user = JSON.parse(localStorage.getItem("auth"));
           setTimeout(() => {
-            StatusService.getYourPosts(1)
+            StatusService.getYourPosts(1, user.id)
               .then((res) => {
                 // const newList = allPost.concat(res.data);
-                setYourPost(res);
-                if (res.length === 0) {
+                setYourPost(res.data);
+                if (res.data.length === 0) {
                   setNoData(true);
                 }
               })
@@ -126,30 +126,30 @@ const YourStatus = () => {
         description: "Must login before doing activity",
         duration: 2,
       });
+    } else {
+      setToken(localStorage.getItem("token"));
+      setAuth(JSON.parse(localStorage.getItem("auth")));
+      setIsLoadingList(true);
+      setIsLoadingComponents(true);
+      setIsLoadingPages(true);
+      loadYourStatus(page);
     }
-    setToken(localStorage.getItem("token"));
-    setAuth(JSON.parse(localStorage.getItem("auth")));
-    setIsLoadingList(true);
-    setIsLoadingComponents(true);
-    setIsLoadingPages(true);
-    loadYourStatus(page);
   }, []);
 
   useEffect(() => {
-    setToken(localStorage.getItem("token"));
-    setAuth(JSON.parse(localStorage.getItem("auth")));
     loadYourStatus(page);
   }, [rendering]);
 
   const loadYourStatus = async (page) => {
+    const user = JSON.parse(localStorage.getItem("auth"));
     setTimeout(() => {
-      StatusService.getYourPosts(page)
+      StatusService.getYourPosts(page, user.id)
         .then((res) => {
           const newPage = page + 1;
           setPage(newPage);
-          const newList = yourPost.concat(res);
+          const newList = yourPost.concat(res.data);
           setYourPost(newList);
-          if (res.length === 0) {
+          if (res.data.length === 0) {
             setNoData(true);
           }
         })
@@ -250,7 +250,7 @@ const YourStatus = () => {
         ""
       )}
 
-      {noData ? (
+      {noData && !isLoadingComponents && !isLoadingList ? (
         <div className="list-content">
           <div className="nodata">
             <img src={require("./../../assets/images/inbox.png")} alt="" />

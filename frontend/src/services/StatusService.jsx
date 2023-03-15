@@ -4,7 +4,6 @@ const auth = JSON.parse(localStorage.getItem("auth"));
 export default {
   getAllStatus: async function (page) {
     try {
-      // console.log(page);
       let url;
       if (page != null && page > 1) {
         url = `http://localhost:8000/api/status?page=${page}`;
@@ -17,19 +16,16 @@ export default {
       throw error;
     }
   },
-  getYourPosts: async function (page) {
-    if (!auth) {
-      return;
-    }
+  getYourPosts: async function (page, userId) {
     try {
       let url;
       if (page != null && page > 1) {
-        url = `http://localhost:8000/api/status/posted/${auth.id}?page=${page}`;
+        url = `http://localhost:8000/api/status/posted/${userId}?page=${page}`;
       } else {
-        url = `http://localhost:8000/api/status/posted/${auth.id}`;
+        url = `http://localhost:8000/api/status/posted/${userId}`;
       }
       const response = await axios.get(url);
-      return response.data.data;
+      return response.data;
     } catch (error) {
       throw error;
     }

@@ -1,23 +1,26 @@
-*, html, body {
+*,
+html,
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 :root {
-  --font1: 'Acme', sans-serif;
-  --font2: 'Chivo', sans-serif;
-  --font3: 'Eczar', serif;
-  --font4: 'Francois One', sans-serif;
-  --font5: 'Hammersmith One', sans-serif;
-  --font6: 'Itim', cursive;
-  --font7: 'Jost', sans-serif;
-  --font8: 'Kanit', sans-serif;
-  --font9: 'Laila', sans-serif;
-  --font10: 'Lato', sans-serif;
-  --font11: 'League Spartan', sans-serif;
-  --font12: 'Patrick Hand', cursive;
-  --font13: 'Righteous', cursive;
-  --font14: 'Spectral', serif;
-  --font15: 'Tilt Neon', cursive;
+  --font1: "Acme", sans-serif;
+  --font2: "Chivo", sans-serif;
+  --font3: "Eczar", serif;
+  --font4: "Francois One", sans-serif;
+  --font5: "Hammersmith One", sans-serif;
+  --font6: "Itim", cursive;
+  --font7: "Jost", sans-serif;
+  --font8: "Kanit", sans-serif;
+  --font9: "Laila", sans-serif;
+  --font10: "Lato", sans-serif;
+  --font11: "League Spartan", sans-serif;
+  --font12: "Patrick Hand", cursive;
+  --font13: "Righteous", cursive;
+  --font14: "Spectral", serif;
+  --font15: "Tilt Neon", cursive;
 }
+

@@ -12,6 +12,9 @@ const Navbar = () => {
   let [auth, setAuth] = useState(null);
   const navigate = useNavigate();
 
+  const [isActiveHamburg, setIsActiveHamburg] = useState(true);
+  const [activeMenu, setActiveMenu] = useState(false);
+
   const logoutHandler = async (e) => {
     e.preventDefault();
     await axios
@@ -77,6 +80,17 @@ const Navbar = () => {
   useEffect(() => {
     setAuth(JSON.parse(localStorage.getItem("auth")));
   }, []);
+
+  const handlerHamburg = () => {
+    if (isActiveHamburg === true) {
+      setIsActiveHamburg(false);
+      setActiveMenu(true);
+    } else {
+      setIsActiveHamburg(true);
+      setActiveMenu(false);
+    }
+  };
+
   return (
     <nav className="nav">
       <div className="nav-brand">
@@ -89,28 +103,66 @@ const Navbar = () => {
       </ul>
       <div className="nav-auth">
         {token === null ? (
-          <div className="auth">
-            <NavLink className="login" to="/login">
-              Login
-            </NavLink>
-            <NavLink className="register" to="/register">
-              Register
-            </NavLink>
-          </div>
+          <>
+            <div className="auth">
+              <NavLink className="login" to="/login">
+                Login
+              </NavLink>
+              <NavLink className="register" to="/register">
+                Register
+              </NavLink>
+            </div>
+            <div className="hamburg-menu">
+              {isActiveHamburg ? (
+                <div className="active">
+                  <i onClick={handlerHamburg} className="fa-solid fa-bars"></i>
+                </div>
+              ) : (
+                <div className="non-active">
+                  <i onClick={handlerHamburg} className="fa-solid fa-xmark"></i>
+                </div>
+              )}
+            </div>
+          </>
         ) : (
-          <div className="profile">
-            <Dropdown
-              className="dropdown"
-              arrow
-              placement="bottomRight"
-              menu={{
-                items,
-              }}
-            >
-              <img src={require("./../../assets/images/user.png")} alt="" />
-            </Dropdown>
-          </div>
+          <>
+            <div className="profile">
+              <div className="search">
+                <i
+                  onClick={handlerHamburg}
+                  class="fa-solid fa-magnifying-glass"
+                ></i>
+              </div>
+              <Dropdown
+                className="dropdown"
+                arrow
+                placement="bottomRight"
+                menu={{
+                  items,
+                }}
+              >
+                <img src={require("./../../assets/images/user.png")} alt="" />
+              </Dropdown>
+            </div>
+          </>
         )}
+        <div className={activeMenu ? "menu active" : "menu non-active"}>
+          <div className="search">
+            <input type="text" placeholder="Search for status" />
+          </div>
+          {token === null ? (
+            <div className="auth-menu">
+              <NavLink className="login" to="/login">
+                Login
+              </NavLink>
+              <NavLink className="register" to="/register">
+                Register
+              </NavLink>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </nav>
   );

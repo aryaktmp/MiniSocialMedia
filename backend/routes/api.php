@@ -45,5 +45,6 @@ Route::middleware(['auth:api'])->group(
 
 Route::get('/status/{id}', [StatusController::class, 'show']);
 Route::get('/status', [StatusController::class, 'index']);
+Route::get('/status/posted/{id}', [StatusController::class, 'postedStatusUser']);
 
 Route::post('/logout', LogoutController::class)->name('logout');

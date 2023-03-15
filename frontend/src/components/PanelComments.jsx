@@ -83,6 +83,7 @@ const PanelComments = ({
             placeholder={`Reply your Comments, ${
               auth === null ? "Guys" : auth.name
             }`}
+            required
             bordered={false}
             onChange={(e) => setDataComment(e.target.value)}
             value={dataCommment}

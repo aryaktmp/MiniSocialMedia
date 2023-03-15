@@ -20,13 +20,8 @@ const GuestLayout = ({ children }) => {
         <Navbar />
       </div>
       <div className="wrapper-content">
-        <div className="sidebar-left">
-          <SidebarLeft />
-        </div>
-        <div className="body-content">
-          <div className="main">{children}</div>
-          <div className="sidebar-right"></div>
-        </div>
+        <div className="main">{children}</div>
+        <div className="sidebar-right"></div>
       </div>
     </>
   );

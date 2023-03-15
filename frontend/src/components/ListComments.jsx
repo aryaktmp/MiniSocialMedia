@@ -81,7 +81,13 @@ const ListComments = ({
         </div>
         <div className="option">
           <span className="time">{dateComments(comment.created_at)}</span>
-          <Dropdown menu={{ items }} arrow placement="bottom">
+          <Dropdown
+            menu={{ items }}
+            placement="bottomRight"
+            arrow={{
+              pointAtCenter: true,
+            }}
+          >
             <a onClick={(e) => e.preventDefault()} className="dropdown-option">
               <Space>
                 <i className="fa-solid fa-ellipsis icon-option"></i>{" "}

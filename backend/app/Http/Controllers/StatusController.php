@@ -62,7 +62,7 @@ class StatusController extends Controller
         ]);
 
         $validationSentences = explode(' ', $request->sentences);
-        if ((count($validationSentences) > 10) == true) {
+        if (count($validationSentences) > 50) {
             return response()->json([
                 'sentences' => 'Your status exceeds the given limit which is 50 words'
             ], 422);

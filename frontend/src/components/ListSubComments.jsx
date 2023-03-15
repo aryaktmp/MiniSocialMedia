@@ -87,8 +87,10 @@ export function ListSubComments({
             menu={{
               items,
             }}
-            arrow
-            placement="bottom"
+            placement="bottomRight"
+            arrow={{
+              pointAtCenter: true,
+            }}
           >
             <a onClick={(e) => e.preventDefault()} className="dropdown-option">
               <Space>

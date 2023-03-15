@@ -261,16 +261,20 @@ const PanelDetailStatus = ({
           <div className="avatar">
             <img src={require("./../assets/images/user.png")} alt="" />
           </div>
-          <span className="username">{user.name}</span>
-          <span className="email">{user.email}</span>
+          <div className="name">
+            <span className="username">{user.name}</span>
+            <span className="email">{user.email}</span>
+          </div>
         </div>
         <div className="option">
           <Dropdown
             menu={{
               items,
             }}
-            arrow
-            placement="bottom"
+            placement="bottomRight"
+            arrow={{
+              pointAtCenter: true,
+            }}
           >
             <a onClick={(e) => e.preventDefault()} className="dropdown-option">
               <Space>

@@ -37,7 +37,7 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
   useEffect(() => {
     setToken(localStorage.getItem("token"));
     form.setFieldsValue({
-      sentences: data.sentences,
+      sentences: data?.sentences,
     });
   }, [rendering]);
 
@@ -69,7 +69,7 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
     formData.append("sentences", statusMessage);
     setConfirmLoading(true);
     try {
-      await UpdateStatus(formData, data.id).then((response) => {
+      await UpdateStatus(formData, data?.id).then((response) => {
         data.sentences = response.sentences;
         notification.open({
           icon: (
@@ -135,11 +135,11 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        await DeleteStatus(data.id)
+        await DeleteStatus(data?.id)
           .then((response) => {
             if (response.data === "") {
               for (let i = 0; i < allData.length; i++) {
-                if (allData[i].id === data.id) {
+                if (allData[i].id === data?.id) {
                   allData.splice(i, 1);
                 }
               }
@@ -159,7 +159,7 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
       key: "0",
       disabled:
         auth != null && data != null
-          ? auth.id === data.user_id
+          ? auth.id === data?.user_id
             ? false
             : true
           : true,
@@ -173,7 +173,7 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
       danger: true,
       disabled:
         auth != null && data != null
-          ? auth.id === data.user_id
+          ? auth.id === data?.user_id
             ? false
             : true
           : true,
@@ -201,7 +201,7 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
     data.total_love = response.data.total_love;
     data.love_status = response.data.love_status;
     forceUpdate();
-    if (data.love_status === 0) {
+    if (data?.love_status === 0) {
       notification.open({
         icon: (
           <i
@@ -273,17 +273,25 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
           <div className="avatar">
             <img src={require("./../assets/images/user.png")} alt="" />
           </div>
-          <span className="username">{data?.user.name}</span>
-          <span className="email">{data?.user.email}</span>
-          <span className="time">• &nbsp;{dateStatus(data?.created_at)}</span>
+          <div className="name">
+            <span className="username">{data?.user.name}</span>
+            <div className="ket-name">
+              <span className="email">{data?.user.email}</span>
+              <span className="time">
+                &nbsp; • &nbsp;{dateStatus(data?.created_at)}
+              </span>
+            </div>
+          </div>
         </div>
         <div className="option">
           <Dropdown
             menu={{
               items,
             }}
-            arrow
-            placement="bottom"
+            placement="bottomRight"
+            arrow={{
+              pointAtCenter: true,
+            }}
           >
             <a onClick={(e) => e.preventDefault()} className="dropdown-option">
               <Space>
@@ -295,11 +303,11 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
       </div>
       <hr />
       <Link
-        to={"/rekin/" + data.user.name + "/status/" + data.id}
+        to={"/rekin/" + data?.user.name + "/status/" + data?.id}
         className="body"
       >
         <div className="body-list">
-          <span>{data.sentences}</span>
+          <span>{data?.sentences}</span>
         </div>
       </Link>
       <hr />
@@ -339,11 +347,11 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
 
                   formData.append("mode", "status");
                   formData.append("comment", statusComments);
-                  await PostComment(formData, data.id)
+                  await PostComment(formData, data?.id)
                     .then((response) => {
                       if (response.status === 201) {
                         navigate(
-                          "/rekin/" + data.user.name + "/status/" + data.id
+                          "/rekin/" + data?.user.name + "/status/" + data?.id
                         );
                         notification.open({
                           icon: (
@@ -370,24 +378,24 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
             }}
           >
             <i className="fa-solid fa-comment"></i>
-            <span>{data.total_comment}</span>
+            <span>{data?.total_comment}</span>
           </Link>
         </div>
         <div className="love">
           <Link
             onClick={(e) => {
               e.preventDefault();
-              loveStatus(data.id);
+              loveStatus(data?.id);
             }}
           >
             <i
               className={
-                data.love_status === 1
+                data?.love_status === 1
                   ? "fa-solid fa-heart active-love"
                   : "fa-solid fa-heart disable-love"
               }
             ></i>
-            <span>{data.total_love}</span>
+            <span>{data?.total_love}</span>
           </Link>
         </div>
         <div className="view">
@@ -398,7 +406,7 @@ const PanelStatus = ({ data, keyy, updateForce, tokenn, allData }) => {
             }}
           >
             <i className="fa-solid fa-chart-simple"></i>
-            <span>{data.total_view}</span>
+            <span>{data?.total_view}</span>
           </Link>
         </div>
       </div>

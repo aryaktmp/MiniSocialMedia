@@ -52,13 +52,19 @@
   width: 2rem;
 }
 
-.main-content .detail-status .header .user-info .username {
+.main-content .detail-status .header .user-info .name {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.main-content .detail-status .header .user-info .name .username {
   font-family: var(--font13);
   color: #252525;
   font-size: 15px;
 }
 
-.main-content .detail-status .header .user-info .email {
+.main-content .detail-status .header .user-info .name .email {
   font-size: 12px;
   font-family: var(--font6);
   color: #5c677d;
@@ -309,13 +315,14 @@
   color: #03045e;
 }
 
-.main-content .wrapper-comments .list-comments .header .option{
+.main-content .wrapper-comments .list-comments .header .option {
   display: flex;
-  align-items: center;
+  align-items: end;
+  justify-content: end;
   gap: 10px;
 }
 
-.main-content .wrapper-comments .list-comments .header .option a{
+.main-content .wrapper-comments .list-comments .header .option a {
   text-decoration: none;
   color: #252525;
   cursor: pointer;
@@ -386,21 +393,21 @@
   margin: 20px 0 0 0;
 }
 
-.main-content .list-comments .nodata{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} 
-
-.main-content .list-comments .nodata img{
-    width: 4rem;
+.main-content .list-comments .nodata {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.main-content .list-comments .nodata span{
-    font-family: var(--font1);
-    color: #252525;
-    font-size: 20px;
+.main-content .list-comments .nodata img {
+  width: 4rem;
+}
+
+.main-content .list-comments .nodata span {
+  font-family: var(--font1);
+  color: #252525;
+  font-size: 20px;
 }
 
 .main-content .list-comments .panel-subcomment .list-sub {
@@ -421,7 +428,8 @@
 
 .main-content .list-comments .panel-subcomment .list-sub .header .user-profile {
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: start;
   gap: 10px;
 }
 
@@ -458,7 +466,7 @@
   .info {
   display: flex;
   gap: 10px;
-  align-items: center;
+  align-items: start;
 }
 
 .main-content
@@ -541,10 +549,11 @@
 .main-content .list-comments .panel-subcomment .list-sub .header .option {
   display: flex;
   gap: 10px;
-  align-items: center;
+  align-items: end;
+  justify-content: end;
 }
 
-.main-content .list-comments .panel-subcomment .list-sub .header .option a{
+.main-content .list-comments .panel-subcomment .list-sub .header .option a {
   text-decoration: none;
   color: #252525;
   cursor: pointer;
@@ -647,4 +656,58 @@
   a:hover
   span {
   color: #c1121f;
+}
+
+@media screen and (min-width: 280px) and (max-width: 576px) {
+  .main-content .detail-status .header .user-info .name {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .main-content
+    .wrapper-comments
+    .list-comments
+    .header
+    .user-info
+    .user
+    .info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
+  }
+
+  .list-comments .header .option {
+    display: flex;
+    gap: 0;
+    text-align: right;
+    align-items: end;
+    justify-self: end;
+    flex-direction: column-reverse;
+  }
+
+  .panel-subcomment .list-sub .header .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .panel-subcomment .list-sub .header .user-profile .user .info{
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+@media screen and (min-width: 992px) and (max-width: 1024px) {
 }
