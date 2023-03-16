@@ -36,6 +36,7 @@ dengan cara `git clone https://github.com/aryaakk/social-media-web-app.git`
 
     - login terlabih dahulu atau bisa juga register
     - tapi kalau misal tidak ingin untuk register silahkan gunakan credentials : {
+        no_telp = 0909090909
         email = arya@example.com
         password = admin123
     }
