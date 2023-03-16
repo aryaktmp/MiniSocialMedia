@@ -5,6 +5,7 @@ use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\StatusController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -46,5 +47,7 @@ Route::middleware(['auth:api'])->group(
 Route::get('/status/{id}', [StatusController::class, 'show']);
 Route::get('/status', [StatusController::class, 'index']);
 Route::get('/status/posted/{id}', [StatusController::class, 'postedStatusUser']);
+
+Route::get('/user/all', [UserController::class, 'index']);
 
 Route::post('/logout', LogoutController::class)->name('logout');

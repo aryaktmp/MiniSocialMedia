@@ -94,7 +94,7 @@ const Register = () => {
                 className={
                   validation.no_telp != null ? "error-message" : "form-inp"
                 }
-                type="number"
+                type="text"
                 maxLength={15}
                 placeholder="Enter Your No Telp"
                 value={noTelp}

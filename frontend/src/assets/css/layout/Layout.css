@@ -25,13 +25,217 @@ body {
 
 .wrapper-content .sidebar-right {
   width: 20rem;
-  height: 50rem;
+  height: 30rem;
   background-color: #f8f7ff;
   box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
   -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.14);
   border-radius: 10px;
-  padding: 20px 0;
+}
+
+.wrapper-content .sidebar-right .wrapper-sidebar {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper-content .sidebar-right .wrapper-sidebar .header-sidebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #252525;
+}
+
+.wrapper-content .sidebar-right .wrapper-sidebar .header-sidebar i {
+  background-color: #0466c8;
+  color: #edf2fb;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.wrapper-content .sidebar-right .wrapper-sidebar .header-sidebar span {
+  font-size: 25px;
+  font-family: var(--font1);
+  color: #252525;
+}
+
+.wrapper-content .sidebar-right .wrapper-sidebar .body-sidebar {
+  position: relative;
+  padding: 0 10px 0 0;
+}
+
+/* Chrome, Edge, and Safari */
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar::-webkit-scrollbar {
+  width: 12px;
+}
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar::-webkit-scrollbar-thumb {
+  background-color: #0466c8;
+  border-radius: 31px;
+  border: 3px solid #f8f7ff;
+}
+
+.wrapper-content .sidebar-right .wrapper-sidebar .body-sidebar .list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wrapper-content .sidebar-right .wrapper-sidebar .body-sidebar .list-user {
+  position: relative;
+  width: 100%;
+  background-color: #fefcfb;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 11px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .header
+  .avatar
+  img {
+  width: 2rem;
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .header
+  .username {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .header
+  .username .name{
+    width: 100%;
+    font-size: 18px;
+    color: #252525;
+  }
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .header
+  .username .email{
+    width: 100%;
+    font-size: 13px;
+    width: 100%;
+    color: #9eb3c2;
+  }
+
+/* style loaders */
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .spinner {
+  --clr: rgb(0, 113, 128);
+  --gap: 6px;
+  /* gap between each circle */
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .spinner
+  span {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--clr);
+  opacity: 0;
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .spinner
+  span:nth-child(1) {
+  animation: fade 1s ease-in-out infinite;
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .spinner
+  span:nth-child(2) {
+  animation: fade 1s ease-in-out 0.33s infinite;
+}
+
+.wrapper-content
+  .sidebar-right
+  .wrapper-sidebar
+  .body-sidebar
+  .list-user
+  .spinner
+  span:nth-child(3) {
+  animation: fade 1s ease-in-out 0.66s infinite;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
 }
 
 /* responsive web design */

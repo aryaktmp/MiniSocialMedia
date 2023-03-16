@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../navbar/Navbar";
+import Sidebar from "../sidebar/Sidebar";
 import "./../../assets/css/layout/Layout.css";
 
 const AuthLayout = ({ children }) => {
@@ -38,7 +39,9 @@ const AuthLayout = ({ children }) => {
       </div>
       <div className="wrapper-content">
         <div className="main">{children}</div>
-        <div className="sidebar-right"></div>
+        <div className="sidebar-right">
+          <Sidebar />
+        </div>
       </div>
     </>
   );

@@ -20,23 +20,36 @@ class LoginController extends Controller
     {
         //set validation 
         $validate = Validator::make($request->all(), [
-            'email' => 'required',
+            'creden' => 'required',
             'password' => 'required',
         ]);
 
         // if validation fails
-        if($validate->fails()){
+        if ($validate->fails()) {
             return response()->json($validate->errors(), 422);
         }
 
-        // get credentials from request
-        $credentials = $request->only('email', 'password');
+        if (is_numeric($request->creden)) {
+
+            // get credentials from request
+            $credentials = [
+                'no_telp' => $request->creden,
+                'password' => $request->password
+            ];
+        } else {
+            // get credentials from request
+            $credentials = [
+                'email' => $request->creden,
+                'password' => $request->password
+            ];
+        }
+
 
         // if login auth is failed
-        if(!$token = JWTAuth::attempt($credentials)){
+        if (!$token = JWTAuth::attempt($credentials)) {
             return response()->json([
                 'success' => false,
-                'message' => 'Email atau Password Anda Salahh'
+                'message' => 'Email/No Telp atau Password Anda Salahh'
             ], 401);
         }
 

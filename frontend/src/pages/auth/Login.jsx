@@ -8,7 +8,7 @@ import LoadingPages from "../../components/loadingPage";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [creden, setCreden] = useState("");
   const [password, setPassword] = useState("");
   const [loadings, isLoadings] = useState(false);
 
@@ -19,7 +19,7 @@ const Login = () => {
 
     const formData = new FormData();
 
-    formData.append("email", email);
+    formData.append("creden", creden);
     formData.append("password", password);
     isLoadings(true);
     await axios
@@ -59,10 +59,10 @@ const Login = () => {
             </div>
           </div>
           <form onSubmit={loginHandler} className="body-form">
-            <label htmlFor="">Enter your email and password</label>
+            <label htmlFor="">Enter your email/no telp and password</label>
             <div className="form-grp">
               <Input
-                type="email"
+                type="text"
                 className={
                   validation.password != null
                     ? "error-message"
@@ -70,9 +70,9 @@ const Login = () => {
                     ? "error-message"
                     : "form-inp"
                 }
-                placeholder="Enter Your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter Your Email/No Telp"
+                value={creden}
+                onChange={(e) => setCreden(e.target.value)}
               />
               {validation.email && (
                 <small className="error-validation">

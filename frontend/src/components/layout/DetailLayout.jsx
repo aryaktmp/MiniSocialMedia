@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { notification } from "antd";
 import axios from "axios";
 import Navbar from "../navbar/Navbar";
-import SidebarLeft from "../sidebar/SidebarAuth";
+import Sidebar from "../sidebar/Sidebar";
 import "./../../assets/css/layout/Layout.css";
 
 const DetailLayout = ({ children }) => {
@@ -51,7 +51,9 @@ const DetailLayout = ({ children }) => {
       </div>
       <div className="wrapper-content">
         <div className="main">{children}</div>
-        <div className="sidebar-right"></div>
+        <div className="sidebar-right">
+          <Sidebar />
+        </div>
       </div>
     </>
   );
