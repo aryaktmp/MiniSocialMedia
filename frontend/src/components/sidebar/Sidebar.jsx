@@ -48,7 +48,7 @@ const Sidebar = () => {
                 textAlign: "center",
               }}
             >
-              <div class="spinner">
+              <div className="spinner">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -60,7 +60,7 @@ const Sidebar = () => {
           {user.map((users, i) => (
             <div className="list-user" key={i}>
               <div className="header">
-                <div className="avatar">
+                <div className= "avatar">
                   <img src={require("./../../assets/images/user.png")} alt="" />
                 </div>
                 <div className="username">
