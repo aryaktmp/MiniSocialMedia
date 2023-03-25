@@ -1,4 +1,4 @@
-## social-media-web-app
+## MiniSocialMedia
 
 # Rekin Social Media
 
